@@ -7,41 +7,32 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import com.example.a1_fall2026_lemueldipasupil.ControllerView.GameScreen
 import com.example.a1_fall2026_lemueldipasupil.ui.theme.A1fall2026LemuelDipasupilTheme
+import com.example.a1_fall2026_lemueldipasupil.Models.AttemptLog
+import com.example.a1_fall2026_lemueldipasupil.Models.SequenceGame
+
 
 class MainActivity : ComponentActivity() {
+
+    private val sequenceGame = SequenceGame()
+    private val attemptLog = AttemptLog()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             A1fall2026LemuelDipasupilTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    GameScreen(
+                        game = sequenceGame,
+                        log = attemptLog,
                         modifier = Modifier.padding(innerPadding)
                     )
+
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    A1fall2026LemuelDipasupilTheme {
-        Greeting("Android")
     }
 }
