@@ -3,7 +3,8 @@ package com.example.a1_fall2026_lemueldipasupil.Models
 import kotlin.random.Random
 
 class SequenceGame {
-    private var target: IntArray = IntArray(0)
+    var target: IntArray = IntArray(0)
+        private set
     private var index: Int = 0
 
     fun start(length: Int) {
@@ -32,13 +33,5 @@ class SequenceGame {
             guess = rawInput.toList(),
             correct = isCorrect
         )
-    }
-
-    fun compare(target: IntArray, guess: IntArray): BooleanArray {
-        val result = BooleanArray(target.size)
-        for (i in target.indices) {
-            result[i] = (i < guess.size && target[i] == guess[i])
-        }
-        return result
     }
 }

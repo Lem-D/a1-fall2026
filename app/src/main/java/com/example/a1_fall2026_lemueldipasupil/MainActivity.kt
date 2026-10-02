@@ -15,7 +15,6 @@ import com.example.a1_fall2026_lemueldipasupil.Models.SequenceGame
 
 
 class MainActivity : ComponentActivity() {
-
     private val sequenceGame = SequenceGame()
     private val attemptLog = AttemptLog()
 
