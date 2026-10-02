@@ -4,10 +4,12 @@ class AttemptLog {
     // Stores Attempt objects (0..* aggregation)
     private val attempts = mutableListOf<Attempt>()
 
+    // Adds an Attempt object to the log
     fun add(attempt: Attempt) {
         attempts.add(attempt)
     }
 
+    // Returns an array of all Attempt objects
     fun all(): Array<Attempt> {
         return attempts.toTypedArray()
     }
