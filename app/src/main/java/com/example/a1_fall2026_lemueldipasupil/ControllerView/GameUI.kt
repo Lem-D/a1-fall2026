@@ -279,7 +279,7 @@ fun RenderHistory(attempts: List<Attempt>) {
         modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        items(attempts) { attempt ->
+        items(attempts.reversed()) { attempt -> // .reversed() to show most recent attempt
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
